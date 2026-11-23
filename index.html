@@ -1,11 +1,393 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>ТехЭкспертАудит</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b32">
+  <title>ТЕХЭКСПЕРТАУДИТ — охрана труда, пожарная безопасность, СОУТ и обучение</title>
+  <meta name="description" content="ТЕХЭКСПЕРТАУДИТ — комплексные решения для организаций: охрана труда, пожарная безопасность, СОУТ, оценка профессиональных рисков, аутсорсинг и обучение. Санкт-Петербург и Ленинградская область.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://techexpertaudit.ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ТЕХЭКСПЕРТАУДИТ — безопасность и развитие бизнеса">
+  <meta property="og:description" content="Охрана труда, пожарная безопасность, СОУТ, оценка рисков и обучение сотрудников.">
+  <meta property="og:url" content="https://techexpertaudit.ru/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#123b32;--green2:#1c5949;--lime:#b7d96b;--ink:#202923;
+      --muted:#66736b;--paper:#f5f7f3;--white:#fff;--line:#e3e9e2;
+      --shadow:0 18px 55px rgba(18,59,50,.10);--radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;background:#fff;color:var(--ink);font-family:"Roboto Condensed",Arial,sans-serif;font-size:18px;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1180px,calc(100% - 44px));margin:auto}
+    .topline{background:var(--green);color:#dce8df;font-size:14px}
+    .topline .container{display:flex;justify-content:space-between;gap:20px;padding:9px 0}
+    .topline a{color:#fff}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(227,233,226,.8)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:235px}
+    .brand-mark{width:43px;height:43px;border-radius:13px;background:var(--green);color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:-1px}
+    .brand-name{font-weight:800;letter-spacing:.04em;font-size:17px;line-height:1.05;color:var(--green)}
+    .brand-name span{display:block;font-size:10px;letter-spacing:.18em;color:#78857b;margin-top:5px;font-weight:600}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:16px;font-weight:600}
+    .nav-links a{transition:color .2s}
+    .nav-links a:hover{color:var(--green2)}
+    .nav-phone{font-weight:700;color:var(--green);white-space:nowrap}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:14px 22px;background:var(--lime);color:#203326;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+    .nav-cta{padding:12px 18px;font-size:15px}
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(183,217,107,.28);background:#c6e77e}
+    .btn-dark{background:var(--green);color:#fff}
+    .btn-dark:hover{background:var(--green2)}
+    .menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;width:44px;height:44px;color:var(--green);font-size:24px}
+    .hero{position:relative;overflow:hidden;background:var(--green);color:#fff;padding:88px 0 82px}
+    .hero:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(255,255,255,.10);border-radius:50%;right:-100px;top:-260px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 115px rgba(255,255,255,.02)}
+    .hero:after{content:"";position:absolute;width:320px;height:320px;background:rgba(183,217,107,.08);filter:blur(2px);border-radius:50%;right:12%;bottom:-230px}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:700;color:var(--lime)}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--lime)}
+    h1{font-size:clamp(42px,5.4vw,68px);line-height:1.02;letter-spacing:-.035em;margin:22px 0 24px;max-width:760px}
+    .hero-copy{font-size:21px;line-height:1.5;color:#d7e3dc;max-width:680px;margin:0 0 32px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-outline{border:1px solid rgba(255,255,255,.35);color:#fff;background:transparent}
+    .btn-outline:hover{background:rgba(255,255,255,.1);box-shadow:none}
+    .hero-note{display:flex;gap:12px;align-items:center;margin-top:35px;color:#c1d0c7;font-size:15px}
+    .hero-note strong{color:#fff}
+    .hero-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:26px;padding:30px;backdrop-filter:blur(8px)}
+    .hero-panel-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;color:#dce8df;font-size:14px}
+    .live-dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(183,217,107,.14)}
+    .hero-stat{padding:18px 0;border-top:1px solid rgba(255,255,255,.15)}
+    .hero-stat strong{display:block;font-size:25px;color:#fff;margin-bottom:3px}
+    .hero-stat span{color:#c1d0c7;font-size:15px}
+    .section{padding:88px 0}
+    .section-soft{background:var(--paper)}
+    .section-head{max-width:760px;margin-bottom:42px}
+    .kicker{color:var(--green2);font-size:13px;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    h2{font-size:clamp(32px,4vw,46px);line-height:1.08;letter-spacing:-.025em;color:var(--green);margin:13px 0 16px}
+    .section-head p{color:var(--muted);font-size:19px;margin:0;max-width:720px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .service-card{position:relative;min-height:245px;padding:27px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);transition:transform .22s,box-shadow .22s,border-color .22s;display:flex;flex-direction:column}
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c9d8c9}
+    .service-icon{width:48px;height:48px;border-radius:15px;background:#edf4e8;color:var(--green);display:grid;place-items:center;margin-bottom:23px}
+    .service-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .service-card h3{font-size:22px;line-height:1.2;color:var(--green);margin:0 0 10px}
+    .service-card p{font-size:16px;color:var(--muted);margin:0 0 22px}
+    .service-link{margin-top:auto;color:var(--green2);font-weight:700;font-size:15px}
+    .service-link span{display:inline-block;transition:transform .2s}
+    .service-card:hover .service-link span{transform:translateX(5px)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .feature-visual{min-height:440px;background:var(--green);border-radius:28px;padding:34px;position:relative;overflow:hidden;color:#fff}
+    .feature-visual:after{content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-95px;bottom:-140px;box-shadow:0 0 0 35px rgba(255,255,255,.04),0 0 0 75px rgba(255,255,255,.025)}
+    .visual-label{font-size:13px;text-transform:uppercase;letter-spacing:.15em;color:var(--lime);font-weight:700}
+    .visual-title{font-size:34px;line-height:1.1;font-weight:700;max-width:360px;margin:18px 0 28px}
+    .visual-list{position:relative;z-index:1;display:grid;gap:13px;max-width:360px}
+    .visual-list div{display:flex;align-items:center;gap:12px;color:#dce8df;font-size:16px}
+    .check{width:23px;height:23px;flex:none;border-radius:50%;background:rgba(183,217,107,.16);color:var(--lime);display:grid;place-items:center;font-size:14px}
+    .feature-copy p{color:var(--muted);font-size:18px}
+    .check-list{list-style:none;padding:0;margin:25px 0 30px;display:grid;gap:14px}
+    .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:17px}
+    .check-list li:before{content:"✓";color:var(--green2);font-weight:800;background:#edf4e8;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;flex:none}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .benefit{padding:25px 22px;background:#fff;border:1px solid var(--line);border-radius:18px}
+    .benefit b{display:block;font-size:20px;color:var(--green);margin-bottom:8px}
+    .benefit p{font-size:15px;color:var(--muted);margin:0}
+    .industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .industry{padding:22px 24px;border-radius:17px;background:#fff;border:1px solid var(--line);display:flex;gap:15px;align-items:center}
+    .industry-num{font-size:13px;color:#8a9a8d;font-weight:800;letter-spacing:.08em}
+    .industry b{font-size:18px;color:var(--green)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+    .step{padding:25px 22px;border-top:2px solid #c8d8c8;position:relative}
+    .step:before{counter-increment:step;content:"0" counter(step);display:block;font-size:34px;font-weight:800;color:var(--green2);margin-bottom:25px}
+    .step h3{font-size:21px;color:var(--green);margin:0 0 9px}
+    .step p{font-size:16px;color:var(--muted);margin:0}
+    .education{background:var(--green);color:#fff;border-radius:28px;padding:45px 48px;display:flex;align-items:center;justify-content:space-between;gap:35px}
+    .education h2{color:#fff;margin-top:8px;font-size:36px}
+    .education p{color:#d3e0d8;max-width:660px;margin:0}
+    .education .kicker{color:var(--lime)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px}
+    .contact-info{background:var(--paper);border-radius:24px;padding:34px}
+    .contact-row{padding:18px 0;border-bottom:1px solid var(--line)}
+    .contact-row:last-child{border:0}
+    .contact-row span{display:block;color:var(--muted);font-size:14px;margin-bottom:5px}
+    .contact-row a,.contact-row strong{font-size:20px;color:var(--green);font-weight:700}
+    .contact-text p{color:var(--muted);font-size:18px}
+    .contact-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    footer{background:#0d2d26;color:#d3e0d8;padding:38px 0 24px}
+    .footer-main{display:flex;justify-content:space-between;gap:35px;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+    .footer-brand{color:#fff;font-weight:800;font-size:18px}
+    .footer-main p{font-size:14px;color:#aebfb4;max-width:430px;margin:10px 0 0}
+    .footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:15px}
+    .footer-links a:hover{color:var(--lime)}
+    .legal{font-size:13px;color:#9caf9f;padding-top:20px;line-height:1.6}
+    .legal p{margin:5px 0}
+    .mobile-call{display:none}
+    @media(max-width:1000px){
+      .nav-links{gap:14px}.nav-phone{display:none}
+      .hero-grid{gap:35px}.services-grid{grid-template-columns:repeat(2,1fr)}
+      .benefits{grid-template-columns:repeat(2,1fr)}.industry-grid{grid-template-columns:repeat(2,1fr)}
+      .split{gap:35px}
+    }
+    @media(max-width:760px){
+      body{font-size:17px}.container{width:min(100% - 32px,560px)}
+      .topline .container{justify-content:center;text-align:center}.topline .container span:last-child{display:none}
+      .nav{height:70px}.brand{min-width:0}.brand-name{font-size:15px}
+      .menu-toggle{display:block}.nav-cta{display:none}
+      .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:18px 22px 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(0,0,0,.08);flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}.nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
+      .hero{padding:64px 0 55px}.hero-grid{grid-template-columns:1fr;gap:35px}
+      h1{font-size:44px}.hero-copy{font-size:18px}.hero-panel{padding:24px}
+      .section{padding:65px 0}.section-head{margin-bottom:30px}h2{font-size:34px}
+      .services-grid,.split,.contact-grid{grid-template-columns:1fr}
+      .service-card{min-height:215px}.feature-visual{min-height:380px}
+      .benefits{grid-template-columns:1fr 1fr}.industry-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr;gap:12px}.step{padding:18px 10px}
+      .step:before{margin-bottom:12px}.education{padding:30px 25px;display:block}
+      .education h2{font-size:30px}.education .btn{margin-top:24px}
+      .contact-grid{gap:25px}.contact-info{padding:25px}
+      .footer-main{display:block}.footer-links{margin-top:25px}
+      .mobile-call{display:flex;position:fixed;z-index:19;bottom:14px;left:14px;right:14px;justify-content:center;box-shadow:0 10px 30px rgba(18,59,50,.25)}
+      footer{padding-bottom:85px}
+    }
+    @media(max-width:420px){
+      .container{width:calc(100% - 28px)}h1{font-size:39px}
+      .hero-actions .btn{width:100%}.benefits{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}.step{padding:18px 0}
+      .brand-mark{width:39px;height:39px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"ТЕХЭКСПЕРТАУДИТ",
+    "legalName":"Общество с ограниченной ответственностью «ТЕХЭКСПЕРТАУДИТ»",
+    "url":"https://techexpertaudit.ru/",
+    "telephone":"+7-950-044-07-44",
+    "email":"kdf-tea@mail.ru",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Кадетская линия В.О., дом 25, литера А, помещение 10-Н",
+      "addressLocality":"Санкт-Петербург",
+      "postalCode":"199004",
+      "addressCountry":"RU"
+    },
+    "areaServed":["Санкт-Петербург","Ленинградская область"],
+    "description":"Комплексные услуги для организаций в области охраны труда, пожарной безопасности, СОУТ, оценки профессиональных рисков и обучения."
+  }
+  </script>
 </head>
 <body>
-    <h1>ТехЭкспертАудит</h1>
-    <p>Сайт успешно создан!</p>
+  <div class="topline"><div class="container"><span>Комплексные решения для безопасности и развития организаций</span><span>Санкт-Петербург и Ленинградская область</span></div></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="ТЕХЭКСПЕРТАУДИТ — главная">
+        <span class="brand-mark">ТЭА</span>
+        <span class="brand-name">ТЕХЭКСПЕРТАУДИТ<span>ЭКСПЕРТНЫЕ РЕШЕНИЯ ДЛЯ БИЗНЕСА</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
+        <a href="#services">Услуги</a><a href="#about">О компании</a><a href="#industries">Кому помогаем</a><a href="#process">Этапы работы</a><a href="#contacts">Контакты</a>
+      </nav>
+      <a class="nav-phone" href="tel:+79500440744">+7 (950) 044-07-44</a>
+      <a class="nav-cta" href="mailto:kdf-tea@mail.ru?subject=Консультация%20ТЕХЭКСПЕРТАУДИТ">Обсудить задачу ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">ТЕХЭКСПЕРТАУДИТ · Санкт-Петербург</span>
+          <h1>Безопасность бизнеса начинается с профессионального подхода</h1>
+          <p class="hero-copy">Помогаем организациям выстраивать систему охраны труда, пожарной и производственной безопасности, оценивать риски и обучать сотрудников.</p>
+          <div class="hero-actions">
+            <a class="btn" href="mailto:kdf-tea@mail.ru?subject=Запрос%20на%20консультацию">Получить консультацию <span>↗</span></a>
+            <a class="btn btn-outline" href="#services">Посмотреть услуги</a>
+          </div>
+          <div class="hero-note"><span class="live-dot"></span><span><strong>Комплексно или по отдельным направлениям</strong> — состав работ под задачи вашей организации</span></div>
+        </div>
+        <aside class="hero-panel">
+          <div class="hero-panel-top"><span>Ключевые направления</span><span class="live-dot"></span></div>
+          <div class="hero-stat"><strong>Охрана труда</strong><span>Документация, сопровождение, оценка рисков</span></div>
+          <div class="hero-stat"><strong>Пожарная безопасность</strong><span>Документы и организация обязательных мероприятий</span></div>
+          <div class="hero-stat"><strong>Обучение персонала</strong><span>Профессиональное обучение и развитие компетенций</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Наши услуги</span>
+          <h2>Экспертная поддержка на каждом этапе</h2>
+          <p>От подготовки обязательной документации до обучения сотрудников и системного сопровождения вопросов безопасности.</p>
+        </div>
+        <div class="services-grid">
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Охрана%20труда">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
+            <h3>Охрана труда</h3><p>Документация, система управления охраной труда, сопровождение работодателей и оценка профессиональных рисков.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Пожарная%20безопасность">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22c4.2 0 7-2.8 7-6.7 0-2.7-1.5-4.8-4.5-7.3.1 2.2-.7 3.5-1.8 4.1C12.5 8.4 10.6 5.8 7.5 3 8 7.7 5 10.1 5 15.2 5 19.2 7.8 22 12 22Z"/><path d="M12 22c-1.8 0-3-1.2-3-3 0-1.3.7-2.4 2.1-3.8.1 1.1.5 1.7 1.1 2.1.2-1.1.7-1.8 1.5-2.6.4 1.1 1.3 2.1 1.3 4.1 0 1.9-1.2 3.2-3 3.2Z"/></svg></span>
+            <h3>Пожарная безопасность</h3><p>Подготовка документации, инструкции, противопожарные мероприятия и помощь в организации обязательных процедур.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=СОУТ">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 20V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v15"/><path d="M8 7h8M8 11h8M8 15h4M3 20h18"/></svg></span>
+            <h3>Специальная оценка условий труда</h3><p>Организация и проведение СОУТ с учетом рабочих мест, условий труда и особенностей деятельности предприятия.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Оценка%20профессиональных%20рисков">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 7v4l2.5 1.5"/></svg></span>
+            <h3>Оценка профессиональных рисков</h3><p>Выявление опасностей, анализ рисков и подготовка рекомендаций по снижению вероятности происшествий.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Аутсорсинг">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M8 8h8M8 12h5M3 19h18M9 16h6"/></svg></span>
+            <h3>Аутсорсинг охраны труда</h3><p>Сопровождение организации по согласованному перечню задач и в формате, подходящем вашей компании.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Обучение%20рабочим%20профессиям">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 8.5 12 4l9 4.5-9 4.5-9-4.5Z"/><path d="M7 11v5c3.2 2.5 8.8 2.5 12 0v-5M21 9v6"/></svg></span>
+            <h3>Обучение рабочим профессиям</h3><p>Профессиональное обучение и освоение практических компетенций по востребованным рабочим направлениям.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Повышение%20квалификации">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8M8 11h6"/></svg></span>
+            <h3>Повышение квалификации</h3><p>Актуализация профессиональных знаний и развитие компетенций с учетом требований и задач отрасли.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Профессиональная%20переподготовка">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v3h16v-3"/></svg></span>
+            <h3>Профессиональная переподготовка</h3><p>Получение дополнительной профессиональной квалификации и подготовка к работе в новой профессиональной области.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+          <a class="service-card" href="mailto:kdf-tea@mail.ru?subject=Сертификация%20ИСО">
+            <span class="service-icon"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 2 3.4-.1.8 3.3 2.1 2.8-2.1 2.8-.8 3.3-3.4-.1-2.7 2-2.7-2-3.4.1-.8-3.3L3 11l2.1-2.8.8-3.3 3.4.1L12 3Z"/><path d="m8.5 11.5 2.2 2.2 4.8-5"/></svg></span>
+            <h3>Сертификация ИСО</h3><p>Консультационная поддержка по системам менеджмента, подготовке к сертификации и внутренним аудитам.</p><span class="service-link">Обсудить услугу <span>→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container split">
+        <div class="feature-visual">
+          <div class="visual-label">ТЕХЭКСПЕРТАУДИТ</div>
+          <div class="visual-title">Не формальный комплект документов, а работающая система</div>
+          <div class="visual-list">
+            <div><span class="check">✓</span> Учитываем специфику организации</div>
+            <div><span class="check">✓</span> Согласовываем объем и формат работ</div>
+            <div><span class="check">✓</span> Объясняем порядок применения решений</div>
+            <div><span class="check">✓</span> Сопровождаем согласованные задачи</div>
+          </div>
+        </div>
+        <div class="feature-copy">
+          <span class="kicker">О компании</span>
+          <h2>Экспертный подход к задачам вашего предприятия</h2>
+          <p>Требования к безопасности зависят от сферы деятельности, численности сотрудников, оборудования и организации рабочих мест. Поэтому мы начинаем с понимания конкретной ситуации, а не с универсального списка документов.</p>
+          <p>ТЕХЭКСПЕРТАУДИТ помогает определить необходимые мероприятия, подготовить документацию, организовать обучение и выстроить последовательную работу по направлениям безопасности.</p>
+          <ul class="check-list">
+            <li>Отдельные услуги или комплексное решение нескольких задач</li>
+            <li>Дистанционный формат взаимодействия и согласованные выезды</li>
+            <li>Понятный перечень работ, сроки и ожидаемые результаты</li>
+          </ul>
+          <a class="btn btn-dark" href="mailto:kdf-tea@mail.ru?subject=Запрос%20для%20ТЕХЭКСПЕРТАУДИТ">Связаться с экспертом ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Наш подход</span><h2>Что важно в нашей работе</h2><p>Решения должны соответствовать реальным условиям предприятия и быть понятными тем, кто будет применять их каждый день.</p></div>
+        <div class="benefits">
+          <div class="benefit"><b>Индивидуальный подход</b><p>Состав работ учитывает отрасль, структуру, численность персонала и рабочие места.</p></div>
+          <div class="benefit"><b>Практическая польза</b><p>Уделяем внимание не только документам, но и их применению в деятельности организации.</p></div>
+          <div class="benefit"><b>Понятный процесс</b><p>Заранее согласовываем задачи, объем работ, сроки и формат взаимодействия.</p></div>
+          <div class="benefit"><b>Комплексность</b><p>Помогаем связать охрану труда, обучение и другие направления безопасности в общую систему.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="industries">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Для разных отраслей</span><h2>Учитываем специфику вашего бизнеса</h2><p>Подбираем состав услуг с учетом производственных процессов, условий труда и особенностей рабочих мест.</p></div>
+        <div class="industry-grid">
+          <div class="industry"><span class="industry-num">01</span><b>Офисные организации</b></div>
+          <div class="industry"><span class="industry-num">02</span><b>Торговля и услуги</b></div>
+          <div class="industry"><span class="industry-num">03</span><b>Производственные предприятия</b></div>
+          <div class="industry"><span class="industry-num">04</span><b>Строительные организации</b></div>
+          <div class="industry"><span class="industry-num">05</span><b>Склады и логистика</b></div>
+          <div class="industry"><span class="industry-num">06</span><b>Другие направления</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Порядок взаимодействия</span><h2>От запроса до готового результата</h2><p>Последовательно проходим основные этапы и держим в фокусе согласованные задачи организации.</p></div>
+        <div class="steps">
+          <div class="step"><h3>Анализ задачи</h3><p>Уточняем сферу деятельности, численность сотрудников и текущую ситуацию.</p></div>
+          <div class="step"><h3>План работ</h3><p>Определяем необходимые мероприятия, сроки и формат взаимодействия.</p></div>
+          <div class="step"><h3>Выполнение</h3><p>Проводим согласованные работы, готовим документы и рекомендации.</p></div>
+          <div class="step"><h3>Передача результата</h3><p>Передаем материалы и разъясняем порядок их дальнейшего применения.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="education">
+          <div><span class="kicker">Дистанционное обучение</span><h2>Учиться можно в удобном формате</h2><p>На образовательной платформе доступны учебные материалы и видеолекции. Формат и программу обучения можно уточнить у специалистов учебного центра.</p></div>
+          <a class="btn" href="https://portal-edo.ru/" target="_blank" rel="noopener">Перейти на платформу ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Контакты</span><h2>Обсудим задачи вашей организации?</h2><p>Расскажите, какие вопросы нужно решить. Поможем сориентироваться по направлениям и согласовать дальнейшие шаги.</p></div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-row"><span>Телефон</span><a href="tel:+79500440744">+7 (950) 044-07-44</a></div>
+            <div class="contact-row"><span>Электронная почта</span><a href="mailto:kdf-tea@mail.ru">kdf-tea@mail.ru</a></div>
+            <div class="contact-row"><span>Офис</span><strong>199004, Санкт-Петербург, Кадетская линия В.О., д. 25, лит. А, пом. 10-Н</strong></div>
+            <div class="contact-row"><span>Территория работы</span><strong>Санкт-Петербург и Ленинградская область</strong></div>
+          </div>
+          <div class="contact-text">
+            <h3 style="font-size:26px;color:var(--green);margin:4px 0 14px">ООО «ТЕХЭКСПЕРТАУДИТ»</h3>
+            <p>Для первичного обращения достаточно кратко описать задачу и оставить контакт для связи. Мы сможем уточнить детали и определить, какие услуги могут потребоваться вашей организации.</p>
+            <div class="contact-buttons">
+              <a class="btn btn-dark" href="tel:+79500440744">Позвонить</a>
+              <a class="btn" href="mailto:kdf-tea@mail.ru?subject=Запрос%20на%20консультацию">Написать письмо ↗</a>
+            </div>
+            <p style="font-size:14px;margin-top:28px">Юридический адрес: 199226, Санкт-Петербург, ул. Кораблестроителей, д. 16, к. 2, лит. А, офис 4, помещение 44Н.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div><div class="footer-brand">ТЕХЭКСПЕРТАУДИТ</div><p>Экспертные решения в области охраны труда, пожарной безопасности, оценки рисков и профессионального обучения.</p></div>
+        <nav class="footer-links" aria-label="Навигация в подвале"><a href="#services">Услуги</a><a href="#about">О компании</a><a href="#industries">Отрасли</a><a href="#process">Этапы работы</a><a href="#contacts">Контакты</a></nav>
+      </div>
+      <div class="legal">
+        <p>© <span id="year">2026</span> ООО «ТЕХЭКСПЕРТАУДИТ». Все права защищены.</p>
+        <p>Телефон: +7 (950) 044-07-44 · Email: kdf-tea@mail.ru</p>
+        <p>Информация на сайте носит ознакомительный характер. Состав, стоимость и сроки услуг определяются индивидуально после уточнения задачи.</p>
+      </div>
+    </div>
+  </footer>
+  <a class="btn btn-dark mobile-call" href="tel:+79500440744">Позвонить: +7 (950) 044-07-44</a>
+  <script>
+    const toggle=document.getElementById('menuToggle');
+    const links=document.getElementById('navLinks');
+    toggle.addEventListener('click',()=>{const opened=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));toggle.textContent=opened?'×':'☰';});
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
+
